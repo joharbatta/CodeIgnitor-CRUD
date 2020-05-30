@@ -5,7 +5,8 @@ class Tasks extends CI_Controller {
 
 	public function index()
 	{
-		echo "TASKS";
-		
+		// echo "TASKS";
+		// $this->load->helper("url"); autoload
+		$this->load->view('Tasks/TasksList');
 	}
 }
