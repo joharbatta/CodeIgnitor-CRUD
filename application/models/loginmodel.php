@@ -18,4 +18,15 @@ class loginmodel extends CI_Model
            }
   }
 
+  public function tasklist()
+  {
+    // $this->load->library('session');
+    $id=$this->session->userdata('id');
+    $q=$this->db->select('')
+             ->from('tasks')
+             ->where(['user_id'=>$id])
+             ->get();
+        return $q->result();     
+  }
+
 }

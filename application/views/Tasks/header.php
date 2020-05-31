@@ -7,11 +7,20 @@
     </head>
 
 <body>
-    <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+    <nav class="navbar navbar-expand-lg navbar-dark bg-primary ">
   <a class="navbar-brand" href="#">Tasks List</a>
   <button class="navbar-toggler collapsed" type="button" data-toggle="collapse" data-target="#navbarColor01" aria-controls="navbarColor01" aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon"></span>
   </button>
+
+  <?php
+   if($this->session->userdata('id'))
+   {
+   	?>
+        <li><a href="<?=  base_url('dashboard/logout'); ?>" class="btn btn-danger" style="">Logout</a></li>
+    <?php
+    }
+      ?>
 
   <div class="navbar-collapse collapse" id="navbarColor01">
     <!-- <ul class="navbar-nav mr-auto">
