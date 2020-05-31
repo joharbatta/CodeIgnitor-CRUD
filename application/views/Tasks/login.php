@@ -3,7 +3,7 @@
 <div class="container">
 
   <h1 class="mt-5">Login</h1>
-  <?php echo form_open('Login/xlogin'); ?>
+  <?php echo form_open('Login'); ?>
 
   <div class="row">
     <div class="col-lg-6">
