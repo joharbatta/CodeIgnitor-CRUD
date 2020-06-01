@@ -41,7 +41,15 @@ $msg_class=$this->session->flashdata('msg_class')
         <td><?php echo $task->task_title; ?></td>
         <td><?php echo $task->task_body; ?></td>
         <td><a href="#" class="btn btn-warning">EDIT </a></td>
-        <td><a href="#" class="btn btn-light">DELETE </a></td>
+        <!-- <td><a href="#" class="btn btn-light">DELETE </a></td> -->
+        <td>
+        <?=
+        form_open('Dashboard/deletetask'),
+        form_hidden('task_id',$task->id),
+        form_submit(['name'=>'submit','value'=>'Delete','class'=>'btn btn-danger']),
+        form_close();
+        ?>
+      </td>
         </tr>
     <?php }?>
   </tbody>
