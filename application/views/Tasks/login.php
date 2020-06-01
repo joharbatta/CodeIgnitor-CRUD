@@ -39,7 +39,7 @@
     </div>
     <?php endif; ?>
     
-        <?php echo form_submit(['type'=>'submit','class'=>'btn btn-default','value'=>'Submit','style'=>'margin-right:20px;']);  ?>
+        <?php echo form_submit(['type'=>'submit','class'=>'btn btn-default','value'=>'Submit','style'=>'margin-right:10px;']);  ?>
         <?php echo anchor('Register', 'New User! Sign up?', 'class="link-class"') ?>
 </div>
 

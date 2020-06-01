@@ -21,6 +21,11 @@ class Dashboard extends CI_Controller {
 	  $this->session->unset_userdata('id');
 	  return redirect('Login');
 	}
+
+	// public function addtask()
+	// {
+	// 	$this->load->view('Tasks/addtask');
+	// }
     
 
 }

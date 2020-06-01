@@ -44,7 +44,7 @@
  <div class="col-lg-6">
   <div class="form-group">
     <label for="last name">Last Name:</label>
-   <?php echo form_input(['class'=>'form-control','placeholder'=>'Enter Last Name','name'=>'  lastname','value'=>set_value('lastname')]);  ?>
+   <?php echo form_input(['class'=>'form-control','placeholder'=>'Enter Last Name','name'=>'lastname','value'=>set_value('lastname')]);  ?>
   </div>
   </div>
   <div class="col-lg-6  mb-2">
