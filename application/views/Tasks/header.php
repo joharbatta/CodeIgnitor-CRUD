@@ -3,10 +3,10 @@
     <title>Tasks List</title>
     <link href="<?= base_url("Assets/bootstrap.min.css")?>" rel="stylesheet" >
     <!-- <?= link_tag("Assets/css/bootstrap.min.css") ?> --> 
-
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     </head>
 
-<body>
+<body class="">
     <nav class="navbar navbar-expand-lg navbar-dark bg-primary ">
   <a class="navbar-brand" href="#">Tasks List</a>
   <button class="navbar-toggler collapsed" type="button" data-toggle="collapse" data-target="#navbarColor01" aria-controls="navbarColor01" aria-expanded="false" aria-label="Toggle navigation">

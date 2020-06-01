@@ -28,8 +28,19 @@
              <?php  echo form_error('pass');  ?>
         </div>
   </div>
-        <?php echo form_submit(['type'=>'submit','class'=>'btn btn-default','value'=>'Submit']);  ?>
-  
+
+    <?php  if($error=$this->session->flashdata('Login_failed')):  ?>
+    <div class="row">
+    <div class="col-lg-6">
+    <div class="alert alert-danger">
+    <?= $error; ?>
+    </div>
+    </div>
+    </div>
+    <?php endif; ?>
+    
+        <?php echo form_submit(['type'=>'submit','class'=>'btn btn-default','value'=>'Submit','style'=>'margin-right:20px;']);  ?>
+        <?php echo anchor('Register', 'New User! Sign up?', 'class="link-class"') ?>
 </div>
 
 <?php include('footer.php'); ?>

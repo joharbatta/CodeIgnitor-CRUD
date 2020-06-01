@@ -28,7 +28,8 @@ class Login extends CI_Controller {
 		   	}
 			else
 			{
-				echo "Not valid";
+				$this->session->set_flashdata('Login_failed','Invalid Username/Password');
+				return redirect('login');
 			}
 			
 		}
