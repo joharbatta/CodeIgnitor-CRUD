@@ -27,4 +27,18 @@ class taskmodel extends CI_Model
                      ->update('tasks',$task);
   
     }
+
+    function search_data($query)
+    {
+      $this->db->select("*");
+      $this->db->from("tasks");
+      if($query != '')
+      {
+        $this->db->like('task_title', $query);
+        $this->db->or_like('task_body', $query);
+      }
+      $q=$this->db->get();
+      return $q->result();
+    }
+
 }

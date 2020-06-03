@@ -1,6 +1,6 @@
 
 <?php include('header.php'); ?>
-
+  
 <!-- <?php print_r($tasks); ?> -->
 <div class="container">
 
@@ -49,8 +49,71 @@ $msg_class=$this->session->flashdata('msg_class')
     <?php }?>
     </div>
 
+				<div class="input-group">
+					<!-- <span class="input-group-addon">Search</span> -->
+					<input type="text" name="search_text" id="search_text" placeholder="Search" class="form-control" />
+				</div>
+			</div>
+			<br />
+			<div id="result"></div>
+		</div>
+		<div style="clear:both"></div>
+
 </div>
+
 <?php include('footer.php'); ?>
+
+<script>
+$(document).ready(function(){
+
+	load_data();
+
+	function load_data(x)
+	{
+		console.log(x);
+		$.ajax({
+			url:"<?php echo base_url(); ?>Dashboard/search",
+			method:"POST",
+			data:{query:x},
+			success:function(data){
+        console.log(JSON.parse(data))
+        var ndata=JSON.parse(data);
+        console.log(ndata);
+        var html = '';
+					var i;
+					for(i=0; i<ndata.length; i++){
+						html +='<tr>'+
+									'<td>'+ndata[i].id+'</td>'+
+									'<td>'+ndata[i].task_title+'</td>'+
+									'<td>'+ndata[i].task_body+'</td>'+
+									'<td>'+data[i].created_at+'</td>'+
+									'<td>'+
+										'<a href="javascript:;" class="btn btn-info item-edit" data="'+data[i].id+'">Edit</a>'+
+										'<a href="javascript:;" class="btn btn-danger item-delete" data="'+data[i].id+'">Delete</a>'+
+									'</td>'+
+							    '</tr>';
+					}
+
+				$('#result').html(html);
+			}
+		})
+	}
+
+	$('#search_text').keyup(function(){
+		var search = $(this).val();
+		if(search != '')
+		{
+			load_data(search);
+		}
+		else
+		{
+			load_data();
+		}
+	});
+});
+</script>
+
+
 
 
 

@@ -39,6 +39,23 @@ class Dashboard extends CI_Controller {
 		}
 		return redirect('Dashboard');
 	}
+
+	public function search()
+	{
+
+		$query = '';
+		$this->load->model('taskmodel');
+		if($this->input->post('query'))
+		{
+			$query = $this->input->post('query');
+		}
+		$data = $this->taskmodel->search_data($query);
+		// echo ($data);
+		// echo '<pre>';
+		// print_r($data);
+		echo json_encode($data);
+		
+	}
     
 
 }
