@@ -1,9 +1,12 @@
 <html>
     <head>
     <title>Tasks List</title>
+    <link href="<?= base_url("Assets/css/tasks.css")?>" rel="stylesheet" >
     <link href="<?= base_url("Assets/bootstrap.min.css")?>" rel="stylesheet" >
+   
     <!-- <?= link_tag("Assets/css/bootstrap.min.css") ?> --> 
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
     </head>
 
 <body class="">

@@ -1,0 +1,32 @@
+
+.cards{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    margin-bottom: 10px;
+    /* flex-shrink: initial; */
+    /* align-items: baseline; 
+    justify-items: baseline; */
+    /* justify-items: auto; */
+    /* margin: 10px 10px; */
+    /* color: aqua; */
+}
+
+@media only screen and (max-width:560px)
+{
+
+    .cards{
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        padding: 10px 5vh;
+        margin-bottom: 10px;
+      
+    }
+
+    .text-responsive{
+        font-size: 30px;
+        padding: 10px 1vh;
+    }
+
+}

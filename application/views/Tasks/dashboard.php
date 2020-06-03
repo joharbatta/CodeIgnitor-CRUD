@@ -8,7 +8,7 @@
 <?=   anchor('AddTask','Add Tasks',['class'=>'btn btn-lg btn-success'])  ?>
 </div>
 
-<h1 class="mt-5 offset-lg-4"> MANAGE YOUR TASKS</h1>
+<h1 class="mt-5 offset-lg-4 text-responsive"> MANAGE YOUR TASKS</h1>
 
 <div class="" style="margin-top:15px;">
 <?php if($msg=$this->session->flashdata('msg')): 
@@ -23,38 +23,35 @@ $msg_class=$this->session->flashdata('msg_class')
 </div>
 <?php endif; ?>
 
+<div class="cards">
+<?php foreach($tasks as $task) { ?>
+  
+  <!-- <div class=""> -->
 
-<table class=" mt-5 table table-striped table-dark">
-  <thead>
-    <tr>
-      <!-- <th>ID</th> -->
-      <th>TITLE</th>
-      <th>BODY</th>
-      <th>DELETE</th>
-      <th>EDIT</th>
-    </tr>
-  </thead>
-  <tbody>
-    <?php foreach($tasks as $task) { ?>
-        <tr>
-        <!-- <th>1</th> -->
-        <td><?php echo $task->task_title; ?></td>
-        <td><?php echo $task->task_body; ?></td>
-        <!-- <td><a href="#" class="btn btn-warning">EDIT </a></td> -->
-        <td><?=  anchor("EditTask/index/{$task->id}",'Edit',['class'=>'btn btn-warning']);  ?></td>
-        <!-- <td><a href="#" class="btn btn-light">DELETE </a></td> -->
-        <td>
-        <?=
-        form_open('Dashboard/deletetask'),
-        form_hidden('task_id',$task->id),
-        form_submit(['name'=>'submit','value'=>'Delete','class'=>'btn btn-danger']),
-        form_close();
-        ?>
-      </td>
-        </tr>
+        <div class="card col-lg-4 col-sm-6" style="width: 18rem;">
+        <div class="card-body">
+          <h5 class="card-title"><?php echo $task->task_title; ?></h5>
+          <p class="card-text"><?php echo $task->task_body; ?></p>
+            <div class="row">
+            <?=  anchor("EditTask/index/{$task->id}",'Edit',['class'=>'btn btn-warning']);  ?>
+              <?=
+            form_open('Dashboard/deletetask'),
+            form_hidden('task_id',$task->id),
+            form_submit(['name'=>'submit','value'=>'Delete','class'=>'btn btn-danger']),
+            form_close();
+            ?>
+            </div>
+        </div>
+      </div>
+  
+  <!-- </div> -->
+
     <?php }?>
-  </tbody>
-</table>
+    </div>
 
 </div>
 <?php include('footer.php'); ?>
+
+
+
+
