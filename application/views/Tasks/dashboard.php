@@ -40,7 +40,8 @@ $msg_class=$this->session->flashdata('msg_class')
         <!-- <th>1</th> -->
         <td><?php echo $task->task_title; ?></td>
         <td><?php echo $task->task_body; ?></td>
-        <td><a href="#" class="btn btn-warning">EDIT </a></td>
+        <!-- <td><a href="#" class="btn btn-warning">EDIT </a></td> -->
+        <td><?=  anchor("EditTask/index/{$task->id}",'Edit',['class'=>'btn btn-warning']);  ?></td>
         <!-- <td><a href="#" class="btn btn-light">DELETE </a></td> -->
         <td>
         <?=
